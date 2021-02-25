@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.screen {
+    background-color: #050a17;
+    color: white;
+    padding-top: 0px;
+    min-height: 50vh;
+}
+
+h3 {
+    margin: 10px 0px 0px 40px ;
+}

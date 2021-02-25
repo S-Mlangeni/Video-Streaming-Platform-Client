@@ -1,0 +1,165 @@
+:root {
+    --button-color: rgb(163, 163, 163);
+    --button-color-onhover: white;
+    --button-backgroundcolor: rgb(0, 0, 0, 0.8);
+    --button-gradient: linear-gradient(to right, blue 0%, purple 100%);
+    --button-width: 40px;
+    --button-height: 37px;
+    --button-radius: 100%;
+    --navbar-height: 50px;
+    --navbar-backgroundcolor: rgba(0,0, 0, 0.6);
+} /* Set of variables. */
+
+* {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-backgroundcolor);
+    color: white;
+    padding: 0px 30px 0px 40px;
+    height: var(--navbar-height);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-family: Algerian;
+    margin-right: 15px;
+}
+
+.search-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding-left: 6px;
+    float: right;
+    margin-right: 10px;
+}
+
+.navbar input {
+    padding: 2.5px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    
+}
+
+@media (max-width: 768px) {
+    .navbar input {
+        width: 100px;
+    }
+    .search-bar {
+        margin-right: 5px;
+    }
+}
+
+.navbar button {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    color: rgb(173, 173, 173);
+}
+
+.navitems{
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navlinks {
+    display: flex;
+}
+
+.navlinks li {
+    margin: 10px;
+    padding: 5px;
+}
+
+.navlinks a {
+    color: white;
+    text-decoration: none;
+}
+
+.navlinks a:hover {
+    color: rgb(173, 173, 173);
+}
+
+@media (max-width: 768px) {
+    .navlinks li {
+        margin: 5px;
+    }
+}
+
+.burgermenu {
+    cursor: pointer; /*Gives pointer to a non-link element */
+    display: none;
+}
+
+.burgermenu div {
+    background-color: white;
+    width: 20px;
+    height: 3px;
+    margin: 3px;
+}
+
+.burgermenu:hover div {
+    background-color: rgb(173, 173, 173);
+
+}
+
+@media (max-width: 480px) {
+    .burgermenu {
+        display: block;
+    }
+}
+
+.bottom-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 40px 40px;
+}
+
+.buttons button {
+    margin: 0px 10px;
+    color: var(--button-color);
+    padding: 5px;
+    background-color: var(--button-backgroundcolor);
+    background: var(--button-gradient);
+    border: solid grey 0.2px;
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    outline: none;
+}
+
+.buttons button:hover {
+    border-color: var(--button-color-onhover);
+    color: var(--button-color-onhover);
+}
