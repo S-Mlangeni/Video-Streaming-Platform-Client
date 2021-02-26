@@ -8,7 +8,7 @@ function Watchscreen() {
     return (
         <div className="frame">
             <video autoPlay poster={thumbnail} controls controlsList="nodownload">
-                <source src={`${process.env.REACT_APP_API_ENDPOINT}${path}`} type="video/mp4" />
+                <source src={`${process.env.REACT_APP_API_ENDPOINT_VID}${path}`} type="video/mp4" />
                 <source src="" type="video/webm" />
                 Error: Your browser does not support the mp4 or webm videos. 
                 Please change the browser.
