@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {useHistory} from "react-router-dom";
 import "../../Rows.css";
 import {FaArrowLeft, FaArrowRight, FaPlay, FaInfoCircle} from "react-icons/fa";
-import {View, Slide, DescriptionPanel, LeftArrow, RightArrow} from "../../Row-styles";
+import {View, Slide, DescriptionPanel, LeftArrow, RightArrow, Loader} from "../../Row-styles";
 
 require('dotenv').config();
 
@@ -28,6 +28,7 @@ function Action() {
     const [DisplayWidth, setDisplayWidth] = useState(0);
     const [Toggle, setToggle] = useState(false);
     const ElementDetails = useRef();
+    const [Loading, setLoading] = useState(true)
 
     useEffect(() => {
         const AbortFetch = new AbortController(); /* Stops/pauses the fetch function when the
@@ -36,13 +37,19 @@ function Action() {
         const GetData = async () => {
             const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/movies-action-api`, {AbortFetch});
             const data_jsonformat = await data_rough.json();
-            console.log(data_jsonformat);
+            //console.log(data_jsonformat);
             setData(data_jsonformat);
         }
         GetData();
     }, []); /* useEffect prevents looping between the set state and initial state (useState line)
     as the "[]" (no dependency) makes it run the inside code only when the function is called
     (i.e. when the page loads in this case) */ 
+
+    useEffect(() => {
+        if (Data.length !== 0) {
+            setLoading(false)
+        }
+    }, [Data])
 
     const redirect = useHistory();
 
@@ -93,6 +100,7 @@ function Action() {
                         )
                     })}
                 </View>
+                <Loader display={Loading ? "block" : "none"}></Loader>
                 <DescriptionPanel img={Thumbnail} display={Toggle ? "flex" : "none"}>
                     <h3>Description</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a dui vitae purus semper dignissim. In finibus scelerisque ipsum eget efficitur. 

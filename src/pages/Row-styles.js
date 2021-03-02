@@ -63,3 +63,17 @@ export const RightArrow = styled.button`
 export const Episodes = styled.div`
     display: ${props => props.display}
 `;
+
+export const Loader = styled.div`
+    display: ${props => props.display};
+    height: 1px;
+    width: 100%;
+    background-color: rgb(163, 163, 163);
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    @keyframes load {
+    from {transform: translateX(-100%)};
+    to {transform: translateX(100%)}
+    }
+`; 

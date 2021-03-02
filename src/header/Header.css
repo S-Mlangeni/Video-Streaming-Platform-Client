@@ -105,6 +105,10 @@ ul {
     color: rgb(173, 173, 173);
 }
 
+.navlinks a.link {
+    color: rgb(173, 173, 173);
+}
+
 @media (max-width: 768px) {
     .navlinks li {
         margin: 5px;
