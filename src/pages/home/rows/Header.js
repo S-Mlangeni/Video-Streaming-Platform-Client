@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from "react-router-dom";
 import "../../../header/Header.css";
 import {FaPlay, FaInfoCircle} from "react-icons/fa";
-import {HeaderDescription, Head, Episodes} from "../../../header/Header-style";
+import {HeaderDescription, Head, Episodes, Loader} from "../../../header/Header-style";
 import Navbar from '../../../header/Navbar';
 
 function Header() {
@@ -10,6 +10,7 @@ function Header() {
     const [Data, setData] = useState([]);
     const [Path, setPath] = useState("");
     const [Thumbnail, setThumbnail] = useState("");
+    const [Loading, setLoading] = useState(true);
 
     useEffect(() => {
         const AbortFetch = new AbortController(); /* Stops/pauses the fetch function when the
@@ -26,6 +27,12 @@ function Header() {
     as the "[]" (no dependency) makes it run the inside code only when the function is called
     (i.e. when the page loads in this case) */ 
 
+    useEffect(() => {
+        if (Data.length !== 0) {
+            setLoading(false)
+        }
+    }, [Data])
+    
     const redirect = useHistory();
 
     useEffect(() => {
@@ -39,7 +46,7 @@ function Header() {
     be blank/incorrect on the first click */
 
     return (
-        <div>
+        <div className="header_wrapper">
             {Data.map((banner_content) => {
                 return (
                     <Head key="header" image={banner_content.image}>
@@ -69,6 +76,7 @@ function Header() {
                     </Head>
                 )
             })}
+            <Loader display={Loading ? "block" : "none"}></Loader>
         </div>
     )
 }

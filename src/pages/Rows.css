@@ -1,7 +1,7 @@
 :root {
     --button-color: rgb(163, 163, 163);
     --button-color-onhover: white;
-    --button-backgroundcolor: rgb(0, 0, 0, 0.8);
+    --button-background-color: rgb(0,0,0,0);
     --button-gradient: linear-gradient(to right, blue 0%, purple 100%);
     --button-width: 40px;
     --button-height: 37px;
@@ -21,7 +21,7 @@
 
 .arrows {
     color: var(--button-color);
-    background-color: var(--button-backgroundcolor);
+    background-color: var(--button-background-color);
     width: 30px;
     height: var(--slide-height);
     display: flex;

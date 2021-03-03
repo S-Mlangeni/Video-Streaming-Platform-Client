@@ -6,8 +6,7 @@
 .screen {
     background-color: #050a17;
     color: white;
-    padding-top: 0px;
-    min-height: 50vh;
+    padding-bottom: 10px;
 }
 
 h3 {

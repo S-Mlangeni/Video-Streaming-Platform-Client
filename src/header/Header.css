@@ -8,12 +8,18 @@
     --button-radius: 100%;
     --navbar-height: 50px;
     --navbar-backgroundcolor: rgba(0,0, 0, 0.6);
+    --header-minheight: 60vh;
 } /* Set of variables. */
 
 * {
     padding: 0px;
     margin: 0px;
 
+}
+
+.header_wrapper {
+    min-height: var(--header-minheight);
+    background-color: #050a17;
 }
 
 .navbar {

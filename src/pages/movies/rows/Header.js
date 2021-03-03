@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from "react-router-dom";
 import "../../../header/Header.css";
 import {FaPlay, FaInfoCircle} from "react-icons/fa";
-import {HeaderDescription, Head} from "../../../header/Header-style";
+import {HeaderDescription, Head, Episodes, Loader} from "../../../header/Header-style";
 import Navbar from '../../../header/Navbar';
 
 function Header() {
@@ -10,13 +10,14 @@ function Header() {
     const [Data, setData] = useState([]);
     const [Path, setPath] = useState("");
     const [Thumbnail, setThumbnail] = useState("");
+    const [Loading, setLoading] = useState(true);
 
     useEffect(() => {
         const AbortFetch = new AbortController(); /* Stops/pauses the fetch function when the
         the component is unexpectedly unmounted/removed from the DOM/browser-interface during fast
         switching of pages/Dom-components. */
         const GetData = async () => {
-            const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/movies-banner-api`, {AbortFetch});
+            const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/series-banner-api`, {AbortFetch});
             const data_jsonformat = await data_rough.json();
             //console.log(data_jsonformat);
             setData(data_jsonformat);
@@ -26,10 +27,16 @@ function Header() {
     as the "[]" (no dependency) makes it run the inside code only when the function is called
     (i.e. when the page loads in this case) */ 
 
+    useEffect(() => {
+        if (Data.length !== 0) {
+            setLoading(false)
+        }
+    }, [Data])
+    
     const redirect = useHistory();
 
     useEffect(() => {
-        if (Path && Thumbnail != "") {
+        if (Path && Thumbnail !== "") {
             sessionStorage.setItem("path", Path);
             sessionStorage.setItem("thumbnail", Thumbnail);
             redirect.push("/watch")
@@ -39,7 +46,7 @@ function Header() {
     be blank/incorrect on the first click */
 
     return (
-        <div>
+        <div className="header_wrapper">
             {Data.map((banner_content) => {
                 return (
                     <Head key="header" image={banner_content.image}>
@@ -58,11 +65,18 @@ function Header() {
                                     pellentesque diam. Nulla dictum purus sed mollis dignissim. Pellentesque ac massa vel sapien malesuada maximus at et erat. Praesent orci enim, 
                                     volutpat nec consequat vel, pulvinar quis velit. Nam vehicula imperdiet nulla, tincidunt suscipit metus vestibulum vel.
                                 </p>
+                                <Episodes display={banner_content.tag === "series" ? "block" : "none"}>
+                                    <h3>Episodes</h3>
+                                    <div>
+                                        <p>Currently unavailable.</p>
+                                    </div>
+                                </Episodes>
                             </HeaderDescription>
                         </div>
                     </Head>
                 )
             })}
+            <Loader display={Loading ? "block" : "none"}></Loader>
         </div>
     )
 }
