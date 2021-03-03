@@ -47,8 +47,9 @@ export const DescriptionPanel = styled.div`
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
-    & p {
+    & p, h3 {
         text-align: center;
+        margin-left: 0px;
     }
 `;
 

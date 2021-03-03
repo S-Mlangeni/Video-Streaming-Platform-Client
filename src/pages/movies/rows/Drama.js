@@ -25,13 +25,6 @@ function Drama() {
     const SlideMargin = 3;// px
     const [Count, setCount] = useState(SlidesPerView)
     const SlidesViewed = Count;
-    
-    if (SlidesViewed < SlidesPerView) {
-        setCount(SlidesViewed + 1);
-    } else if (SlidesViewed > SlidesPerView) {
-        setCount(SlidesViewed - 1);
-    }
-    
     const [DisplayWidth, setDisplayWidth] = useState(0);
     const [Toggle, setToggle] = useState(false);
     const ElementDetails = useRef();
@@ -75,6 +68,9 @@ function Drama() {
     }, [Count, WindowWidth]);
 
     useEffect(() => {
+        if (SlidesViewed !== SlidesPerView) {
+            setCount(SlidesPerView);
+        }
         const WindowResize = () => {
             setWindowWidth(window.innerWidth);
         }
