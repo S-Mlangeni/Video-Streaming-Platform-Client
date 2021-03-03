@@ -25,6 +25,13 @@ function Trending() {
     const SlideMargin = 3;// px
     const [Count, setCount] = useState(SlidesPerView)
     const SlidesViewed = Count;
+    
+    if (SlidesViewed < SlidesPerView) {
+        setCount(SlidesViewed + 1);
+    } else if (SlidesViewed > SlidesPerView) {
+        setCount(SlidesViewed - 1);
+    };
+
     const [DisplayWidth, setDisplayWidth] = useState(0);
     const [Toggle, setToggle] = useState(false);
     const ElementDetails = useRef();
@@ -71,12 +78,7 @@ function Trending() {
     useEffect(() => {
         const WindowResize = () => {
             setWindowWidth(window.innerWidth)
-        };
-        if (SlidesViewed < SlidesPerView) {
-            setCount(SlidesViewed + 1);
-        } else if (SlidesViewed > SlidesPerView) {
-            setCount(SlidesViewed - 1);
-        };
+        }
         window.addEventListener("resize", WindowResize);
         return (()=>{
             window.removeEventListener("resize", WindowResize)

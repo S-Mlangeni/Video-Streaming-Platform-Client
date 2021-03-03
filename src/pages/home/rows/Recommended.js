@@ -25,12 +25,19 @@ function Recommended() {
     const SlideMargin = 3;// px
     const [Count, setCount] = useState(SlidesPerView)
     const SlidesViewed = Count;
+    
+    if (SlidesViewed < SlidesPerView) {
+        setCount(SlidesViewed + 1);
+    } else if (SlidesViewed > SlidesPerView) {
+        setCount(SlidesViewed - 1);
+    };
+    
     const [DisplayWidth, setDisplayWidth] = useState(0);
     const [Toggle, setToggle] = useState(false);
     const ElementDetails = useRef();
     const [Tag, setTag] = useState("");
     const [Loading, setLoading] = useState(true);
-
+    
     useEffect(() => {
         const AbortFetch = new AbortController(); /* Stops/pauses the fetch function when the
         the component is unexpectedly unmounted/removed from the DOM/browser-interface during fast
@@ -71,12 +78,7 @@ function Recommended() {
     useEffect(() => {
         const WindowResize = () => {
             setWindowWidth(window.innerWidth)
-        };
-        if (SlidesViewed < SlidesPerView) {
-            setCount(SlidesViewed + 1);
-        } else if (SlidesViewed > SlidesPerView) {
-            setCount(SlidesViewed - 1);
-        };
+        }
         window.addEventListener("resize", WindowResize);
         return (()=>{
             window.removeEventListener("resize", WindowResize)

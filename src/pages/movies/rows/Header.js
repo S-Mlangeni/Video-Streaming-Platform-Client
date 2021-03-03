@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from "react-router-dom";
 import "../../../header/Header.css";
 import {FaPlay, FaInfoCircle} from "react-icons/fa";
-import {HeaderDescription, Head, Episodes, Loader} from "../../../header/Header-style";
+import {HeaderDescription, Head, Loader} from "../../../header/Header-style";
 import Navbar from '../../../header/Navbar';
 
 function Header() {
@@ -65,12 +65,6 @@ function Header() {
                                     pellentesque diam. Nulla dictum purus sed mollis dignissim. Pellentesque ac massa vel sapien malesuada maximus at et erat. Praesent orci enim, 
                                     volutpat nec consequat vel, pulvinar quis velit. Nam vehicula imperdiet nulla, tincidunt suscipit metus vestibulum vel.
                                 </p>
-                                <Episodes display={banner_content.tag === "series" ? "block" : "none"}>
-                                    <h3>Episodes</h3>
-                                    <div>
-                                        <p>Currently unavailable.</p>
-                                    </div>
-                                </Episodes>
                             </HeaderDescription>
                         </div>
                     </Head>
