@@ -17,7 +17,7 @@ function Header() {
         the component is unexpectedly unmounted/removed from the DOM/browser-interface during fast
         switching of pages/Dom-components. */
         const GetData = async () => {
-            const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/series-banner-api`, {AbortFetch});
+            const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/movies-banner-api`, {AbortFetch});
             const data_jsonformat = await data_rough.json();
             //console.log(data_jsonformat);
             setData(data_jsonformat);
