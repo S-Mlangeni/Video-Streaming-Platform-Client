@@ -22,7 +22,7 @@
 .arrows {
     color: var(--button-color);
     background-color: var(--button-background-color);
-    width: 30px;
+    width: 35px;
     height: var(--slide-height);
     display: flex;
     align-items: center;

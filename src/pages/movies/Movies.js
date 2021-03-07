@@ -3,7 +3,6 @@ import Action from './rows/Action';
 import Drama from './rows/Drama';
 import "../Page.css";
 import Comedy from './rows/Comedy';
-import Horror from './rows/Horror';
 
 function Movies() {
     return (
@@ -14,8 +13,6 @@ function Movies() {
             <Comedy/>
             <h3>Drama</h3>
             <Drama/>
-            <h3>Horror</h3>
-            <Horror/>
         </div>
     )
 }

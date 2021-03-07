@@ -6,7 +6,7 @@ import {View, Slide, DescriptionPanel, LeftArrow, RightArrow, Loader} from "../.
 
 require('dotenv').config();
 
-function Action() {
+function Drama() {
     const [Data, setData] = useState([]);
     const [Path, setPath] = useState("");
     const [Thumbnail, setThumbnail] = useState("");
@@ -22,7 +22,7 @@ function Action() {
         var SlidesPerView = 5;
     }
     
-    const SlideMargin = 3;// px
+    const SlideMargin = 4;// px
     const [Count, setCount] = useState(SlidesPerView)
     const SlidesViewed = Count;
     const [DisplayWidth, setDisplayWidth] = useState(0);
@@ -35,7 +35,7 @@ function Action() {
         the component is unexpectedly unmounted/removed from the DOM/browser-interface during fast
         switching of pages/Dom-components. */
         const GetData = async () => {
-            const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/series-action-api`, {AbortFetch});
+            const data_rough = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/series-drama-api`, {AbortFetch});
             const data_jsonformat = await data_rough.json();
             //console.log(data_jsonformat);
             setData(data_jsonformat);
@@ -119,4 +119,4 @@ function Action() {
     )
 }
 
-export default Action
+export default Drama

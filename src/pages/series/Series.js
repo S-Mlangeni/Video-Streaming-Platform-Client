@@ -1,21 +1,18 @@
 import React from 'react';
-import Action from './rows/Action';
 import "../Page.css";
-import Animation from './rows/Animation';
 import Comedy from './rows/Comedy';
-import Documentaries from './rows/Documentaries';
+import Drama from './rows/Drama';
+import Reality from './rows/Reality';
 
 function Series() {
     return (
         <div className="screen"> 
-            <h3>Action</h3>
-            <Action/>
-            <h3>Animation</h3>
-            <Animation/>
             <h3>Comedy</h3>
             <Comedy/>
-            <h3>Documentaries</h3>
-            <Documentaries/>
+            <h3>Drama</h3>
+            <Drama/>
+            <h3>Reality</h3>
+            <Reality/>
         </div>
     )
 }

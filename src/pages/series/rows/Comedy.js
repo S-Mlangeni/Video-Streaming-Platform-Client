@@ -22,7 +22,7 @@ function Comedy() {
         var SlidesPerView = 5;
     }
     
-    const SlideMargin = 3;// px
+    const SlideMargin = 4;// px
     const [Count, setCount] = useState(SlidesPerView)
     const SlidesViewed = Count;
     const [DisplayWidth, setDisplayWidth] = useState(0);
