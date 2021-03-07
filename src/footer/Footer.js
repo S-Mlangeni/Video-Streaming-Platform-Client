@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer() {
     return (
         <footer className="footersection">
-            <h2>WEME</h2>
+            <div className="title"></div>
             <p>Copyright &copy; 2021</p>
             <p>Design: SM</p>
         </footer>

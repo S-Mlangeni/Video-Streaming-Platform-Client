@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 :root {
     --button-color: rgb(163, 163, 163);
     --button-color-onhover: white;
@@ -14,7 +16,18 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: 'Montserrat', sans-serif;;
 
+}
+
+.title {
+    width: 100px;
+    height: 50px;
+    background-image: url("./weme-Brand-CI.png");
+    background-repeat: no-repeat; /* Eliminates image repetition */
+    background-size: cover; /* Sizes image to completely cover its 
+    element (100% can also be used, however may result in blank spaces) */
+    background-position: center; /*Centre's image */
 }
 
 .header_wrapper {
@@ -167,6 +180,9 @@ ul {
     border-radius: var(--button-radius);
     cursor: pointer;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons button:hover {

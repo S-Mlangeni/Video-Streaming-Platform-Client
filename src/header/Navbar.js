@@ -26,7 +26,7 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <h1>WeMe</h1>
+            <div className="title"></div>
             <div className="navbar-right">
                 <form className="search-bar">
                     <input type="textbox" placeholder="Search" />

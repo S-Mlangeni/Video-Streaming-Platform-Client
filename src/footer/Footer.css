@@ -2,8 +2,18 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0px;
+    padding: 5px 20px 5px 0px;
     background-color: rgba(0, 0, 0, 1);
     color: gainsboro;
-    font-size: 14px;
+    font-size: 10px;
+}
+
+.title {
+    width: 100px;
+    height: 50px;
+    background-image: url("../header/weme-Brand-CI.png");
+    background-repeat: no-repeat; /* Eliminates image repetition */
+    background-size: cover; /* Sizes image to completely cover its 
+    element (100% can also be used, however may result in blank spaces) */
+    background-position: center; /*Centre's image */
 }
