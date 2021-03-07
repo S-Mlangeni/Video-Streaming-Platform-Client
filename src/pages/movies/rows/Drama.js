@@ -101,12 +101,7 @@ function Drama() {
                 <Loader display={Loading ? "block" : "none"}></Loader>
                 <DescriptionPanel img={Thumbnail} display={Toggle ? "flex" : "none"}>
                     <h3>Description</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a dui vitae purus semper dignissim. In finibus scelerisque ipsum eget efficitur. 
-                        Aenean eu erat faucibus, mattis mi in, feugiat sem. Cras viverra dolor vel ante lobortis luctus. Integer laoreet pellentesque ipsum nec facilisis. 
-                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer a vulputate enim. Quisque sit amet ligula eget mauris cursus tristique. 
-                        Suspendisse nec eros sit amet quam vehicula ornare. In pretium nisl eu mi auctor efficitur. In ullamcorper tempus dapibus. Pellentesque ac 
-                        pellentesque diam. Nulla dictum purus sed mollis dignissim. Pellentesque ac massa vel sapien malesuada maximus at et erat. Praesent orci enim, 
-                        volutpat nec consequat vel, pulvinar quis velit. Nam vehicula imperdiet nulla, tincidunt suscipit metus vestibulum vel.
+                    <p>Not available on demo.
                     </p>
                 </DescriptionPanel>
             </div>
