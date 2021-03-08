@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import "./Header.css";
 import {Navlinks} from "./Header-style";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import {FaSearch} from "react-icons/fa";
 
 function Navbar() {
@@ -24,9 +24,11 @@ function Navbar() {
         }
     }, [Active])
 
+    const redirect = useHistory();
+
     return (
         <nav className="navbar">
-            <div className="title"></div>
+            <div className="title" onClick={() => {redirect.push("/")}}></div>
             <div className="navbar-right">
                 <form className="search-bar">
                     <input type="textbox" placeholder="Search" />

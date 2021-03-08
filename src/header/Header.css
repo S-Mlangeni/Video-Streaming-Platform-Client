@@ -28,6 +28,7 @@
     background-size: cover; /* Sizes image to completely cover its 
     element (100% can also be used, however may result in blank spaces) */
     background-position: center; /*Centre's image */
+    cursor: pointer;
 }
 
 .header_wrapper {
