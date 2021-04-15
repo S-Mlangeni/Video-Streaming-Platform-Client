@@ -10,8 +10,10 @@ import MoviesHeader from "./pages/movies/rows/Header";
 import SeriesHeader from "./pages/series/rows/Header";
 import ReactGA from "react-ga";
 
+require("dotenv").config();
+
 function App() {
-  ReactGA.initialize("UA-172987750-2");
+  ReactGA.initialize(process.env.REACT_APP_TRACKING_ID);
   return (
     <Router>
       <div className="App">
