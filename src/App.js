@@ -12,10 +12,6 @@ import ReactGA from "react-ga";
 
 function App() {
   ReactGA.initialize("UA-172987750-2");
-  //Pages to be reported/monitored/tracked:
-  ReactGA.pageview(window.location.pathname + window.location.search);
-  /*Expression inside "pageview" method allows all pages to be reported
-  with the full path (i.e. /movies/?lang=en).*/
   return (
     <Router>
       <div className="App">

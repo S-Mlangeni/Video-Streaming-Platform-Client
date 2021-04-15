@@ -1,7 +1,12 @@
 import React from 'react';
 import "./Watchscreen.css";
+import ReactGA from "react-ga";
 
 function Watchscreen() {
+    //Pages to be reported/monitored/tracked:
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    /*Expression inside "pageview" method allows all pages to be reported
+    with the full path (i.e. /movies/?lang=en).*/
     const path = sessionStorage.getItem("path");
     const thumbnail = sessionStorage.getItem("thumbnail");
     console.log("Video file is running...")
