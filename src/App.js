@@ -8,8 +8,14 @@ import Footer from "./footer/Footer";
 import HomeHeader from "./pages/home/rows/Header";
 import MoviesHeader from "./pages/movies/rows/Header";
 import SeriesHeader from "./pages/series/rows/Header";
+import ReactGA from "react-ga";
 
 function App() {
+  ReactGA.initialize("UA-172987750-2");
+  //Pages to be reported/monitored/tracked:
+  ReactGA.pageview(window.location.pathname + window.location.search);
+  /*Expression inside "pageview" method allows all pages to be reported
+  with the full path (i.e. /movies/?lang=en).*/
   return (
     <Router>
       <div className="App">

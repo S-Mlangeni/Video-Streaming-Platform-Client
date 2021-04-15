@@ -3,6 +3,7 @@ import "./Header.css";
 import {Navlinks} from "./Header-style";
 import {NavLink, useHistory} from "react-router-dom";
 import {FaSearch} from "react-icons/fa";
+import ReactGA from "react-ga";
 
 function Navbar() {
     const [Active, setActive] = useState(false);
@@ -26,13 +27,21 @@ function Navbar() {
 
     const redirect = useHistory();
 
+    const SearchButtonHandler = (e) => {
+        e.preventDefault();
+        ReactGA.event({
+            category: "Search button",
+            action: "No action as button is disabled"
+        })
+    }
+
     return (
         <nav className="navbar">
             <div className="title" onClick={() => {redirect.push("/")}}></div>
             <div className="navbar-right">
                 <form className="search-bar">
                     <input type="textbox" placeholder="Search" />
-                    <button onClick={(e) => {e.preventDefault()}}><FaSearch/></button>
+                    <button onClick={SearchButtonHandler}><FaSearch/></button>
                 </form>
                 <div className="navitems">
                     <Navlinks className="navlinks" slide={Active ? "translateX(-100%)" : "translateX(0%)"} duration={Duration}>
